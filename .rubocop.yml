@@ -1,0 +1,79 @@
+AllCops:
+  TargetRubyVersion: 2.5.1
+
+  Exclude:
+    - config/**/*
+    - Gemfile
+    - bin/*
+    - bundle/**/*
+    - app/helpers/*
+    - app/channels/**/*
+    - vendor/**/*
+    - spec/**/*
+    - db/**/*
+    - config.ru
+    - Rakefile
+    - app/jobs/**/*
+    - app/mailers/**/*
+
+
+  DisplayCopNames: true
+
+Metrics/LineLength:
+  Max: 180
+  Exclude:
+    - spec/**/*.rb
+
+Metrics/BlockLength:
+  Exclude:
+    - spec/**/*.rb
+    - lib/tasks/**/*.rake
+    - config/routes.rb
+    - config/environments/*
+
+Style/BlockDelimiters:
+  Exclude:
+    - spec/**/*.rb
+    
+Naming/MethodName:
+  Enabled: false
+
+Metrics/MethodLength:
+  Max: 15
+  Exclude:
+    - db/migrate/**/*
+
+Style/FrozenStringLiteralComment:
+  Exclude:
+    - app/models/application_record.rb
+    - app/controllers/application_controller.rb
+
+Style/RegexpLiteral:
+  Enabled: false
+
+Lint/AmbiguousBlockAssociation:
+  Enabled: false
+
+Bundler/OrderedGems:
+  Enabled: false
+
+Metrics/ClassLength:
+  Max: 200
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Rails/Date:
+  Enabled: false
+
+Rails/TimeZone:
+  Enabled: false
+
+Documentation:
+  Enabled: false
+
+Rails/SkipsModelValidations:
+  Enabled: false
+
+Rails/NotNullColumn:
+  Enabled: false
