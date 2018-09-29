@@ -10,6 +10,7 @@ gem 'puma', '~> 3.11'
 # gem 'capistrano-rails', group: :development
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'rubocop'
+gem 'rubocop-rspec'
 gem 'overcommit'
 
 group :development, :test do
