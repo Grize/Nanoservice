@@ -6,12 +6,14 @@ ruby '2.5.1'
 gem 'rails', '~> 5.2.1'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
+gem 'redis'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'rubocop'
 gem 'rubocop-rspec'
 gem 'overcommit'
+gem 'sidekiq'
 
 group :development, :test do
   gem 'rspec'
