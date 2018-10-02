@@ -1,24 +1,25 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Запуск сервиса происходит по командам:
 
-Things you may want to cover:
+* be rails s
 
-* Ruby version
+* be sidekiq
 
-* System dependencies
+Запросы передаются на http://localhost:3000/message/send_one и http://localhost:3000/message/send_many
 
-* Configuration
+* /send_one служит для отправки сообщения одному получателю на один мессенджер
 
-* Database creation
+* /send_many для отправки сообщения или нескольким пользователям или на несколько мессенджеров
 
-* Database initialization
+* запросы передаются в формате:
+  curl --header "Content-Type: application/json" \
+  --request POST \
+  --data '{"token":"user token","sender":"Sender name", "addressee":"Addressee name","body":"Message body","messanger":"messanger"}' \
+  http://localhost:3000/message/send_one
 
-* How to run the test suite
+* Для верефикации нужен запись юзера в базе данных, в которой будет токен
 
-* Services (job queues, cache servers, search engines, etc.)
+* Для очередей был использован sidekiq как один из самых подходящих гемов реализации
 
-* Deployment instructions
-
-* ...
+* К сожалению, не были реализованны отправка сообщений по расписанию и исключение возможности отправки одного сообщения несколько раз. 
